@@ -2,6 +2,7 @@ package com.example.vilimirita;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ public class ma2 extends AppCompatActivity {
 
     TextView m1;
     TextView m2;
+    TextView m3;
 
     Button k1;
     Button k2;
@@ -26,7 +28,6 @@ public class ma2 extends AppCompatActivity {
     Button k7;
     Button k8;
     Button k9;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class ma2 extends AppCompatActivity {
 
             m1 = findViewById(R.id.tv2);
             m2 = findViewById(R.id.tv3);
+            m3 = findViewById(R.id.tv4);
 
             k1 = findViewById(R.id.b1);
             k2 = findViewById(R.id.b2);
@@ -76,8 +78,8 @@ public class ma2 extends AppCompatActivity {
             k9.setEnabled(false);
 
             o.setEnabled(false);
-        } // выкл кнопок в начале
 
+        } // начальная фаза бъектов
     }
 
     public int random() {
@@ -217,10 +219,37 @@ public class ma2 extends AppCompatActivity {
         k8.setEnabled(true);
         k9.setEnabled(true);
 
+
         m1.setText(Integer.toString(random()));
         s.setEnabled(false);
         o.setEnabled(true);
-    } //рандомизания экрана и вкл кнопок
+
+        new CountDownTimer(20000 , 1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                //m3.setText((int) (millisUntilFinished / 1000));
+                m3.setText("таймер : " + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                k1.setEnabled(false);
+                k2.setEnabled(false);
+                k3.setEnabled(false);
+                k4.setEnabled(false);
+                k5.setEnabled(false);
+                k6.setEnabled(false);
+                k7.setEnabled(false);
+                k8.setEnabled(false);
+                k9.setEnabled(false);
+
+                m1.setText("нажми \n start");
+                o.setEnabled(false);
+                s.setEnabled(true);
+            }
+        }.start();
+    } //активация игры
 
     public void over(View view) {
         k1.setEnabled(false);
@@ -236,5 +265,5 @@ public class ma2 extends AppCompatActivity {
         m1.setText("нажми \n start");
         o.setEnabled(false);
         s.setEnabled(true);
-    }
+    } //конец игры
 }
