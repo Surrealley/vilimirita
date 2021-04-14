@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class ma3 extends AppCompatActivity {
+public class MainActivity3 extends AppCompatActivity {
 
     int count = 0;
 
@@ -38,7 +38,7 @@ public class ma3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.am3);
+        setContentView(R.layout.activity_main3);
 
         tv = findViewById(R.id.textView2);
         tv2 = findViewById(R.id.textView3);
@@ -93,8 +93,8 @@ public class ma3 extends AppCompatActivity {
             // если слово на экране соответствует тексту на нажатой кнопке...
             if (String.valueOf(index).contentEquals(btn.getText())) {
                 // выборка нового слово
-                count++;
                 randomSelectWord();
+                count++;
                 tv2.setText("ПРАВИЛЬНО");
                 tv2.setTextColor(getResources().getColor(R.color.green));
                 tv4.setText("счет: " + count);
@@ -125,7 +125,7 @@ public class ma3 extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent a = new Intent(ma3.this , MainActivity.class);
+        Intent a = new Intent(MainActivity3.this , MainActivity.class);
         startActivity(a);
         finish();
     }

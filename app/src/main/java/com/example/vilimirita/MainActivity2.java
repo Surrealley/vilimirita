@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 
-public class ma2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     Button btn3;
     Button start;
@@ -40,7 +40,7 @@ public class ma2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.am2);
+        setContentView(R.layout.activity_main2);
 
         {
             btn3 = findViewById(R.id.w0);
@@ -103,7 +103,7 @@ public class ma2 extends AppCompatActivity {
     } //метод рандома
 
     public void back(View view) {
-        Intent a = new Intent(ma2.this, MainActivity.class);
+        Intent a = new Intent(MainActivity2.this, MainActivity.class);
         startActivity(a);
         finish();
     } //переход на основное окно
@@ -147,7 +147,7 @@ public class ma2 extends AppCompatActivity {
         }
     };
 
-    public void Start(View view) {
+    public void start(View view) {
         key1.setEnabled(true);
         key2.setEnabled(true);
         key3.setEnabled(true);

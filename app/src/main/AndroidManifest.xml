@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ma2"/>
+        <activity android:name=".MainActivity2"/>
 
-        <activity android:name=".ma3"/>
+        <activity android:name=".MainActivity3"/>
     </application>
 
 </manifest>
