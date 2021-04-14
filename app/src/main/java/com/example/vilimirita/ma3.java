@@ -43,7 +43,7 @@ public class ma3 extends AppCompatActivity {
 
         {
         t1 = findViewById(R.id.textView2);
-        t2 = findViewById(R.id.textView2);
+        t2 = findViewById(R.id.textView3);
         c1 = findViewById(R.id.c1);
         c2 = findViewById(R.id.c2);
         c3 = findViewById(R.id.c3);
@@ -67,7 +67,7 @@ public class ma3 extends AppCompatActivity {
         c3.setOnClickListener(oс);
         c4.setOnClickListener(oс);
         c5.setOnClickListener(oс);
-        c6.setOnClickListener(oс);
+        c6.setOnClickListener(oс); //ообработка кнопок
 
     }
 
@@ -149,5 +149,5 @@ public class ma3 extends AppCompatActivity {
         c6.setTextColor(getResources().getColor(R.color.purple));
 
           randomSelectWord();
-    }
+    } // старт игры
 }

@@ -13,25 +13,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ma2 extends AppCompatActivity {
 
-    Button b3;
-    Button s;
+    Button btn3;
+    Button start;
 
     int count = 0;
 
-    TextView m1;
-    TextView m2;
-    TextView m3;
-    TextView m4;
+    TextView monitor;
+    TextView monitor2;
+    TextView monitor3;
+    TextView monitor4;
 
-    private Button k1;
-    private Button k2;
-    private Button k3;
-    private Button k4;
-    private Button k5;
-    private Button k6;
-    private Button k7;
-    private Button k8;
-    private Button k9;
+    private Button key1;
+    private Button key2;
+    private Button key3;
+    private Button key4;
+    private Button key5;
+    private Button key6;
+    private Button key7;
+    private Button key8;
+    private Button key9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,47 +39,47 @@ public class ma2 extends AppCompatActivity {
         setContentView(R.layout.am2);
 
         {
-            b3 = findViewById(R.id.w0);
-            s = findViewById(R.id.start);
+            btn3 = findViewById(R.id.w0);
+            start = findViewById(R.id.start);
 
-            m1 = findViewById(R.id.tv2);
-            m2 = findViewById(R.id.tv3);
-            m3 = findViewById(R.id.tv4);
-            m4 = findViewById(R.id.textView4);
+            monitor = findViewById(R.id.tv2);
+            monitor2 = findViewById(R.id.tv3);
+            monitor3 = findViewById(R.id.tv4);
+            monitor4 = findViewById(R.id.textView4);
 
-            k1 = findViewById(R.id.b1);
-            k2 = findViewById(R.id.b2);
-            k3 = findViewById(R.id.b3);
-            k4 = findViewById(R.id.b4);
-            k5 = findViewById(R.id.b5);
-            k6 = findViewById(R.id.b6);
-            k7 = findViewById(R.id.b7);
-            k8 = findViewById(R.id.b8);
-            k9 = findViewById(R.id.b9);
+            key1 = findViewById(R.id.b1);
+            key2 = findViewById(R.id.b2);
+            key3 = findViewById(R.id.b3);
+            key4 = findViewById(R.id.b4);
+            key5 = findViewById(R.id.b5);
+            key6 = findViewById(R.id.b6);
+            key7 = findViewById(R.id.b7);
+            key8 = findViewById(R.id.b8);
+            key9 = findViewById(R.id.b9);
         }
 
         {
-            k1.setOnClickListener(buttons);
-            k2.setOnClickListener(buttons);
-            k3.setOnClickListener(buttons);
-            k4.setOnClickListener(buttons);
-            k5.setOnClickListener(buttons);
-            k6.setOnClickListener(buttons);
-            k7.setOnClickListener(buttons);
-            k8.setOnClickListener(buttons);
-            k9.setOnClickListener(buttons);
+            key1.setOnClickListener(buttons);
+            key2.setOnClickListener(buttons);
+            key3.setOnClickListener(buttons);
+            key4.setOnClickListener(buttons);
+            key5.setOnClickListener(buttons);
+            key6.setOnClickListener(buttons);
+            key7.setOnClickListener(buttons);
+            key8.setOnClickListener(buttons);
+            key9.setOnClickListener(buttons);
         }
 
         {
-            k1.setEnabled(false);
-            k2.setEnabled(false);
-            k3.setEnabled(false);
-            k4.setEnabled(false);
-            k5.setEnabled(false);
-            k6.setEnabled(false);
-            k7.setEnabled(false);
-            k8.setEnabled(false);
-            k9.setEnabled(false);
+            key1.setEnabled(false);
+            key2.setEnabled(false);
+            key3.setEnabled(false);
+            key4.setEnabled(false);
+            key5.setEnabled(false);
+            key6.setEnabled(false);
+            key7.setEnabled(false);
+            key8.setEnabled(false);
+            key9.setEnabled(false);
 
         } // начальная фаза бъектов
 
@@ -104,117 +104,96 @@ public class ma2 extends AppCompatActivity {
         finish();
     } //переход на основное окно
 
+    private void correctAnswer()
+    {
+        monitor2.setText("ПРАВИЛЬНО");
+        monitor2.setTextColor(getResources().getColor(R.color.green));
+        monitor.setText(Integer.toString(random()));
+        count++;
+        monitor4.setText("счет :" + count);
+    }//правильный ответ
+
+    private void wrongAnswer()
+    {
+        monitor2.setText("НЕПРАВИЛЬНО");
+        monitor2.setTextColor(getResources().getColor(R.color.red));
+        count--;
+    } //неправильный ответ
+
     View.OnClickListener buttons = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.b1:
-                     if(m1.getText().equals(k1.getText())) {
-                         m2.setText("ПРАВИЛЬНО");
-                         m2.setTextColor(getResources().getColor(R.color.green));
-                         m1.setText(Integer.toString(random()));
-                         count++;
-
+                     if(monitor.getText().equals(key1.getText())) {
+                         correctAnswer();
                      }
                      else {
-                         m2.setText("НЕПРАВИЛЬНО");
-                         m2.setTextColor(getResources().getColor(R.color.red));
+                         wrongAnswer();
                      }
                     break;
                 case R.id.b2:
-                    if(m1.getText().equals(k2.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key2.getText())) {
+                        correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                        wrongAnswer();
                     }
                     break;
                 case R.id.b3:
-                    if(m1.getText().equals(k3.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key3.getText())) {
+                       correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                       wrongAnswer();
                     }
                     break;
                 case R.id.b4:
-                    if(m1.getText().equals(k4.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key4.getText())) {
+                        correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                        wrongAnswer();
                     }
                     break;
                 case R.id.b5:
-                    if(m1.getText().equals(k5.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key5.getText())) {
+                       correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                        wrongAnswer();
                     }
                     break;
                 case R.id.b6:
-                    if(m1.getText().equals(k6.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key6.getText())) {
+                        correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                        wrongAnswer();
                     }
                     break;
                 case R.id.b7:
-                    if(m1.getText().equals(k7.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key7.getText())) {
+                        correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                       wrongAnswer();
                     }
                     break;
                 case R.id.b8:
-                    if(m1.getText().equals(k8.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key8.getText())) {
+                       correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                        wrongAnswer();
                     }
                     break;
                 case R.id.b9:
-                    if(m1.getText().equals(k9.getText())) {
-                        m2.setText("ПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.green));
-                        m1.setText(Integer.toString(random()));
-                        count++;
+                    if(monitor.getText().equals(key9.getText())) {
+                        correctAnswer();
                     }
                     else {
-                        m2.setText("НЕПРАВИЛЬНО");
-                        m2.setTextColor(getResources().getColor(R.color.red));
+                       wrongAnswer();
                     }
                     break;
 
@@ -223,20 +202,20 @@ public class ma2 extends AppCompatActivity {
     }; //обработка кнопок для игры
 
     public void Start(View view) {
-        k1.setEnabled(true);
-        k2.setEnabled(true);
-        k3.setEnabled(true);
-        k4.setEnabled(true);
-        k5.setEnabled(true);
-        k6.setEnabled(true);
-        k7.setEnabled(true);
-        k8.setEnabled(true);
-        k9.setEnabled(true);
+        key1.setEnabled(true);
+        key2.setEnabled(true);
+        key3.setEnabled(true);
+        key4.setEnabled(true);
+        key5.setEnabled(true);
+        key6.setEnabled(true);
+        key7.setEnabled(true);
+        key8.setEnabled(true);
+        key9.setEnabled(true);
 
-        m4.setText("счет :" + count);
+        monitor4.setText("счет :" + count);
 
-        m1.setText(Integer.toString(random()));
-        s.setEnabled(false);
+        monitor.setText(Integer.toString(random()));
+        start.setEnabled(false);
 
 
         new CountDownTimer(20000 , 1000) {
@@ -244,25 +223,25 @@ public class ma2 extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 //m3.setText((int) (millisUntilFinished / 1000));
-                m3.setText("таймер : " + millisUntilFinished / 1000);
+                monitor3.setText("таймер : " + millisUntilFinished / 1000);
             }
 
             @Override
             public void onFinish() {
-                k1.setEnabled(false);
-                k2.setEnabled(false);
-                k3.setEnabled(false);
-                k4.setEnabled(false);
-                k5.setEnabled(false);
-                k6.setEnabled(false);
-                k7.setEnabled(false);
-                k8.setEnabled(false);
-                k9.setEnabled(false);
+                key1.setEnabled(false);
+                key2.setEnabled(false);
+                key3.setEnabled(false);
+                key4.setEnabled(false);
+                key5.setEnabled(false);
+                key6.setEnabled(false);
+                key7.setEnabled(false);
+                key8.setEnabled(false);
+                key9.setEnabled(false);
 
-                m1.setText("нажми \n start");
-                s.setEnabled(true);
+                monitor.setText("нажми \n start");
+                start.setEnabled(true);
             }
         }.start();
-    } //активация игры
+    } //активация таймера и игры
 
 }
