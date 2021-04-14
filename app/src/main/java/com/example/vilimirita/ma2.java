@@ -16,10 +16,12 @@ public class ma2 extends AppCompatActivity {
     Button b3;
     Button s;
 
+    int count = 0;
 
     TextView m1;
     TextView m2;
     TextView m3;
+    TextView m4;
 
     private Button k1;
     private Button k2;
@@ -43,6 +45,7 @@ public class ma2 extends AppCompatActivity {
             m1 = findViewById(R.id.tv2);
             m2 = findViewById(R.id.tv3);
             m3 = findViewById(R.id.tv4);
+            m4 = findViewById(R.id.textView4);
 
             k1 = findViewById(R.id.b1);
             k2 = findViewById(R.id.b2);
@@ -110,6 +113,7 @@ public class ma2 extends AppCompatActivity {
                          m2.setText("ПРАВИЛЬНО");
                          m2.setTextColor(getResources().getColor(R.color.green));
                          m1.setText(Integer.toString(random()));
+                         count++;
 
                      }
                      else {
@@ -122,6 +126,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -133,6 +138,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -144,6 +150,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -155,6 +162,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -166,6 +174,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -177,6 +186,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -188,6 +198,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -199,6 +210,7 @@ public class ma2 extends AppCompatActivity {
                         m2.setText("ПРАВИЛЬНО");
                         m2.setTextColor(getResources().getColor(R.color.green));
                         m1.setText(Integer.toString(random()));
+                        count++;
                     }
                     else {
                         m2.setText("НЕПРАВИЛЬНО");
@@ -221,6 +233,7 @@ public class ma2 extends AppCompatActivity {
         k8.setEnabled(true);
         k9.setEnabled(true);
 
+        m4.setText("счет :" + count);
 
         m1.setText(Integer.toString(random()));
         s.setEnabled(false);
