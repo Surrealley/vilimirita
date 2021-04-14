@@ -1,6 +1,7 @@
 package com.example.vilimirita;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -9,7 +10,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Arrays;
 
 public class ma2 extends AppCompatActivity {
 
@@ -59,15 +63,15 @@ public class ma2 extends AppCompatActivity {
         }
 
         {
-            key1.setOnClickListener(buttons);
-            key2.setOnClickListener(buttons);
-            key3.setOnClickListener(buttons);
-            key4.setOnClickListener(buttons);
-            key5.setOnClickListener(buttons);
-            key6.setOnClickListener(buttons);
-            key7.setOnClickListener(buttons);
-            key8.setOnClickListener(buttons);
-            key9.setOnClickListener(buttons);
+            key1.setOnClickListener(oс);
+            key2.setOnClickListener(oс);
+            key3.setOnClickListener(oс);
+            key4.setOnClickListener(oс);
+            key5.setOnClickListener(oс);
+            key6.setOnClickListener(oс);
+            key7.setOnClickListener(oс);
+            key8.setOnClickListener(oс);
+            key9.setOnClickListener(oс);
         }
 
         {
@@ -104,13 +108,14 @@ public class ma2 extends AppCompatActivity {
         finish();
     } //переход на основное окно
 
+
     private void correctAnswer()
     {
         monitor2.setText("ПРАВИЛЬНО");
         monitor2.setTextColor(getResources().getColor(R.color.green));
-        monitor.setText(Integer.toString(random()));
         count++;
-        monitor4.setText("счет :" + count);
+        monitor4.setText("счет: " + count);
+        monitor.setText(Integer.toString(random()));
     }//правильный ответ
 
     private void wrongAnswer()
@@ -118,88 +123,29 @@ public class ma2 extends AppCompatActivity {
         monitor2.setText("НЕПРАВИЛЬНО");
         monitor2.setTextColor(getResources().getColor(R.color.red));
         count--;
+        monitor4.setText("счет: " + count);
     } //неправильный ответ
 
-    View.OnClickListener buttons = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.b1:
-                     if(monitor.getText().equals(key1.getText())) {
-                         correctAnswer();
-                     }
-                     else {
-                         wrongAnswer();
-                     }
-                    break;
-                case R.id.b2:
-                    if(monitor.getText().equals(key2.getText())) {
-                        correctAnswer();
-                    }
-                    else {
-                        wrongAnswer();
-                    }
-                    break;
-                case R.id.b3:
-                    if(monitor.getText().equals(key3.getText())) {
-                       correctAnswer();
-                    }
-                    else {
-                       wrongAnswer();
-                    }
-                    break;
-                case R.id.b4:
-                    if(monitor.getText().equals(key4.getText())) {
-                        correctAnswer();
-                    }
-                    else {
-                        wrongAnswer();
-                    }
-                    break;
-                case R.id.b5:
-                    if(monitor.getText().equals(key5.getText())) {
-                       correctAnswer();
-                    }
-                    else {
-                        wrongAnswer();
-                    }
-                    break;
-                case R.id.b6:
-                    if(monitor.getText().equals(key6.getText())) {
-                        correctAnswer();
-                    }
-                    else {
-                        wrongAnswer();
-                    }
-                    break;
-                case R.id.b7:
-                    if(monitor.getText().equals(key7.getText())) {
-                        correctAnswer();
-                    }
-                    else {
-                       wrongAnswer();
-                    }
-                    break;
-                case R.id.b8:
-                    if(monitor.getText().equals(key8.getText())) {
-                       correctAnswer();
-                    }
-                    else {
-                        wrongAnswer();
-                    }
-                    break;
-                case R.id.b9:
-                    if(monitor.getText().equals(key9.getText())) {
-                        correctAnswer();
-                    }
-                    else {
-                       wrongAnswer();
-                    }
-                    break;
+    View.OnClickListener oс = new View.OnClickListener() {
+        @RequiresApi(api = Build.VERSION_CODES.N)
+        public void onClick(View view) {
+            String[] r = {"1","2","3","4","5","6","7","8","9"};
+            // узнаем какое слово было выведено на экран
+            int index = (Arrays.asList(r).indexOf(monitor.getText())) + 1;
+
+            Button btn = findViewById(view.getId());
+            // если слово на экране НЕ соответствует тексту на нажатой кнопке...
+            if (String.valueOf(index) != btn.getText()){
+               wrongAnswer();
 
             }
+
+            // если слово на экране соответствует тексту на нажатой кнопке...
+            if (String.valueOf(index).contentEquals(btn.getText())) {
+                correctAnswer();
+            }
         }
-    }; //обработка кнопок для игры
+    };
 
     public void Start(View view) {
         key1.setEnabled(true);
@@ -222,7 +168,6 @@ public class ma2 extends AppCompatActivity {
 
             @Override
             public void onTick(long millisUntilFinished) {
-                //m3.setText((int) (millisUntilFinished / 1000));
                 monitor3.setText("таймер : " + millisUntilFinished / 1000);
             }
 
@@ -237,6 +182,8 @@ public class ma2 extends AppCompatActivity {
                 key7.setEnabled(false);
                 key8.setEnabled(false);
                 key9.setEnabled(false);
+
+                count = 0;
 
                 monitor.setText("нажми \n start");
                 start.setEnabled(true);
