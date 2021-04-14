@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,21 +15,21 @@ public class ma2 extends AppCompatActivity {
 
     Button b3;
     Button s;
-    Button o;
+
 
     TextView m1;
     TextView m2;
     TextView m3;
 
-    Button k1;
-    Button k2;
-    Button k3;
-    Button k4;
-    Button k5;
-    Button k6;
-    Button k7;
-    Button k8;
-    Button k9;
+    private Button k1;
+    private Button k2;
+    private Button k3;
+    private Button k4;
+    private Button k5;
+    private Button k6;
+    private Button k7;
+    private Button k8;
+    private Button k9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,6 @@ public class ma2 extends AppCompatActivity {
         {
             b3 = findViewById(R.id.w0);
             s = findViewById(R.id.start);
-            o = findViewById(R.id.over);
 
             m1 = findViewById(R.id.tv2);
             m2 = findViewById(R.id.tv3);
@@ -77,9 +78,10 @@ public class ma2 extends AppCompatActivity {
             k8.setEnabled(false);
             k9.setEnabled(false);
 
-            o.setEnabled(false);
-
         } // начальная фаза бъектов
+
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     public int random() {
@@ -222,7 +224,7 @@ public class ma2 extends AppCompatActivity {
 
         m1.setText(Integer.toString(random()));
         s.setEnabled(false);
-        o.setEnabled(true);
+
 
         new CountDownTimer(20000 , 1000) {
 
@@ -245,25 +247,9 @@ public class ma2 extends AppCompatActivity {
                 k9.setEnabled(false);
 
                 m1.setText("нажми \n start");
-                o.setEnabled(false);
                 s.setEnabled(true);
             }
         }.start();
     } //активация игры
 
-    public void over(View view) {
-        k1.setEnabled(false);
-        k2.setEnabled(false);
-        k3.setEnabled(false);
-        k4.setEnabled(false);
-        k5.setEnabled(false);
-        k6.setEnabled(false);
-        k7.setEnabled(false);
-        k8.setEnabled(false);
-        k9.setEnabled(false);
-
-        m1.setText("нажми \n start");
-        o.setEnabled(false);
-        s.setEnabled(true);
-    } //конец игры
 }
