@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
           switch (v.getId()) {
               case R.id.w1:
-                  Intent a = new Intent(MainActivity.this , MainActivity2.class);
+                  Intent a = new Intent(MainActivity.this , StartGameTwo.class);
                   startActivity(a);
                   finish();
                   break;
               case R.id.w2:
-                  Intent b = new Intent(MainActivity.this , MainActivity3.class);
+                  Intent b = new Intent(MainActivity.this , StartGameThree.class);
                   startActivity(b);
                   finish();
                   break;

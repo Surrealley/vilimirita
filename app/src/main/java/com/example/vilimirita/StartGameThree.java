@@ -1,5 +1,6 @@
 package com.example.vilimirita;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class MainActivity3 extends AppCompatActivity {
+public class StartGameThree extends AppCompatActivity {
 
     int count = 0;
 
@@ -74,6 +75,7 @@ public class MainActivity3 extends AppCompatActivity {
      String[] r = {"красный","оранжевый","желтый","зеленый","синий","фиолетовый"};
 
     View.OnClickListener oс = new View.OnClickListener() {
+        @SuppressLint("SetTextI18n")
         @RequiresApi(api = Build.VERSION_CODES.N)
         public void onClick(View view) {
 
@@ -82,14 +84,6 @@ public class MainActivity3 extends AppCompatActivity {
 
             Button btn = findViewById(view.getId());
 
-            if (String.valueOf(index) != btn.getText()){
-                tv2.setText("НЕПРАВИЛЬНО");
-                tv2.setTextColor(getResources().getColor(R.color.red));
-                count--;
-                tv4.setText("счет: " + count);
-
-            }
-
             // если слово на экране соответствует тексту на нажатой кнопке...
             if (String.valueOf(index).contentEquals(btn.getText())) {
                 // выборка нового слово
@@ -97,6 +91,12 @@ public class MainActivity3 extends AppCompatActivity {
                 count++;
                 tv2.setText("ПРАВИЛЬНО");
                 tv2.setTextColor(getResources().getColor(R.color.green));
+                tv4.setText("счет: " + count);
+            }
+            else{
+                tv2.setText("НЕПРАВИЛЬНО");
+                tv2.setTextColor(getResources().getColor(R.color.red));
+                count--;
                 tv4.setText("счет: " + count);
             }
         }
@@ -125,7 +125,7 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent a = new Intent(MainActivity3.this , MainActivity.class);
+        Intent a = new Intent(StartGameThree.this , MainActivity.class);
         startActivity(a);
         finish();
     }

@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/w0"
-        android:layout_width="82dp"
-        android:layout_height="80dp"
+        android:layout_width="74dp"
+        android:layout_height="69dp"
         android:background="@drawable/back"
         android:onClick="back"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,18 +50,18 @@
         android:id="@+id/c6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="12dp"
         android:text="6"
         app:layout_constraintBottom_toBottomOf="@+id/c5"
         app:layout_constraintStart_toEndOf="@+id/c5"
         app:layout_constraintTop_toTopOf="@+id/c5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/c3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="12dp"
         android:text="3"
         app:layout_constraintBottom_toBottomOf="@+id/c2"
         app:layout_constraintStart_toEndOf="@+id/c2"
