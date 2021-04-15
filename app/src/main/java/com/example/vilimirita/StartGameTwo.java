@@ -87,6 +87,7 @@ public class StartGameTwo extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
+    //метод рандома
     public int random() {
         String[] r = {"1","2","3","4","5","6","7","8","9"};
         int s = r.length;
@@ -96,15 +97,16 @@ public class StartGameTwo extends AppCompatActivity {
             a = (int) (1 + Math.random() * s);
         }
         return a;
-    } //метод рандома
+    }
 
+    //переход на основное окно
     public void back(View view) {
         Intent a = new Intent(StartGameTwo.this, MainActivity.class);
         startActivity(a);
         finish();
-    } //переход на основное окно
+    }
 
-
+    //правильный ответ
     private void correctAnswer()
     {
         count++;
@@ -113,15 +115,16 @@ public class StartGameTwo extends AppCompatActivity {
         Log.d("QWERTY", String.valueOf(count));
         tvCounter.setText("счет: " + count);
         tvInsert.setText(Integer.toString(random()));
-    }//правильный ответ
+    }
 
+    //неправильный ответ
     private void wrongAnswer()
     {
         tvResult.setText("НЕПРАВИЛЬНО");
         tvResult.setTextColor(getResources().getColor(R.color.red));
         count--;
         tvCounter.setText("счет: " + count);
-    } //неправильный ответ
+    }
 
     View.OnClickListener oс = new View.OnClickListener() {
         @RequiresApi(api = Build.VERSION_CODES.N)
@@ -131,19 +134,19 @@ public class StartGameTwo extends AppCompatActivity {
             int index = (Arrays.asList(r).indexOf(tvInsert.getText())) + 1;
 
             Button btn = findViewById(view.getId());
-            // если слово на экране НЕ соответствует тексту на нажатой кнопке...
+            // если слово на экране соответствует тексту на нажатой кнопке...
             if (String.valueOf(index).contentEquals(btn.getText())) {
                 correctAnswer();
             }
+            // если слово на экране НЕ соответствует тексту на нажатой кнопке...
             else
             {
                 wrongAnswer();
             }
-            // если слово на экране соответствует тексту на нажатой кнопке...
-
         }
     };
 
+    //старт  игры
     public void start(View view) {
         key1.setEnabled(true);
         key2.setEnabled(true);
@@ -160,14 +163,14 @@ public class StartGameTwo extends AppCompatActivity {
         tvInsert.setText(Integer.toString(random()));
         start.setEnabled(false);
 
-
+        //создание таймера
         new CountDownTimer(20000 , 1000) {
-
+            //активация таймера и игры
             @Override
             public void onTick(long millisUntilFinished) {
                 tvTimer.setText("таймер: " + millisUntilFinished / 1000);
             }
-
+            //конец таймера
             @Override
             public void onFinish() {
                 key1.setEnabled(false);
@@ -186,6 +189,6 @@ public class StartGameTwo extends AppCompatActivity {
                 start.setEnabled(true);
             }
         }.start();
-    } //активация таймера и игры
+    }
 
 }

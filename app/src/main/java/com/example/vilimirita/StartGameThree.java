@@ -56,6 +56,7 @@ public class StartGameThree extends AppCompatActivity {
 
         back = findViewById(R.id.w0);
 
+        //начальная фаза кнопок
         color1.setEnabled(false);
         color2.setEnabled(false);
         color3.setEnabled(false);
@@ -63,12 +64,14 @@ public class StartGameThree extends AppCompatActivity {
         color5.setEnabled(false);
         color6.setEnabled(false);
 
+
+         //обработка кнопок
         color1.setOnClickListener(oс);
         color2.setOnClickListener(oс);
         color3.setOnClickListener(oс);
         color4.setOnClickListener(oс);
         color5.setOnClickListener(oс);
-        color6.setOnClickListener(oс); //ообработка кнопок
+        color6.setOnClickListener(oс);
 
     }
 
@@ -106,30 +109,14 @@ public class StartGameThree extends AppCompatActivity {
         tv.setText(r[(int) (Math.random() * r.length)]);
     }
 
-    /**
-     * в методе clickNumbers() реализован рандом без повторений (Random shuffle)
-     * новые рандомные значения передаем кнопкам
-     */
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    private void setRandomShuffleValueButton() {
-        Random random = new Random();
-        List<Object> randomNumbers = random.ints(1, 10)
-                .distinct().limit(9).boxed().collect(Collectors.toList());
-
-        color1.setText(String.valueOf(randomNumbers.get(0)));
-        color2.setText(String.valueOf(randomNumbers.get(1)));
-        color3.setText(String.valueOf(randomNumbers.get(2)));
-        color4.setText(String.valueOf(randomNumbers.get(3)));
-        color5.setText(String.valueOf(randomNumbers.get(4)));
-        color6.setText(String.valueOf(randomNumbers.get(5)));
-    }
-
+    //кнопка выхода на главный экран
     public void back(View view) {
         Intent a = new Intent(StartGameThree.this , MainActivity.class);
         startActivity(a);
         finish();
     }
 
+    //старт игры
     public void game(View view) {
         color1.setEnabled(true);
         color2.setEnabled(true);
@@ -137,6 +124,8 @@ public class StartGameThree extends AppCompatActivity {
         color4.setEnabled(true);
         color5.setEnabled(true);
         color6.setEnabled(true);
+
+        game.setEnabled(false);
 
         color1.setBackgroundColor(getResources().getColor(R.color.red));
         color2.setBackgroundColor(getResources().getColor(R.color.orange));
@@ -155,13 +144,15 @@ public class StartGameThree extends AppCompatActivity {
         count = 0;
         tv4.setText("счет :" + count);
           randomSelectWord();
+
+          //создание таймера
         new CountDownTimer(20000 , 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
                 tv3.setText("таймер : " + millisUntilFinished / 1000);
             }
-
+            //конец таймера
             @Override
             public void onFinish() {
                 color1.setEnabled(false);
@@ -176,5 +167,5 @@ public class StartGameThree extends AppCompatActivity {
                 game.setEnabled(true);
             }
         }.start();
-    } // старт игры
+    } //конец игры
 }
