@@ -6,6 +6,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -73,6 +75,8 @@ public class StartGameThree extends AppCompatActivity {
         color5.setOnClickListener(oс);
         color6.setOnClickListener(oс);
 
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
      String[] r = {"красный","оранжевый","желтый","зеленый","синий","фиолетовый"};
