@@ -59,14 +59,7 @@ public class StartGameThree extends AppCompatActivity {
         back = findViewById(R.id.w0);
 
         //начальная фаза кнопок
-        color1.setEnabled(false);
-        color2.setEnabled(false);
-        color3.setEnabled(false);
-        color4.setEnabled(false);
-        color5.setEnabled(false);
-        color6.setEnabled(false);
-
-
+        setEnable(false);
          //обработка кнопок
         color1.setOnClickListener(oс);
         color2.setOnClickListener(oс);
@@ -79,7 +72,16 @@ public class StartGameThree extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-     String[] r = {"красный","оранжевый","желтый","зеленый","синий","фиолетовый"};
+    public void setEnable(boolean i){
+        color1.setEnabled(i);
+        color2.setEnabled(i);
+        color3.setEnabled(i);
+        color4.setEnabled(i);
+        color5.setEnabled(i);
+        color6.setEnabled(i);
+    }
+
+    String[] r = {"красный","оранжевый","желтый","зеленый","синий","фиолетовый"};
 
     View.OnClickListener oс = new View.OnClickListener() {
         @SuppressLint("SetTextI18n")
@@ -112,22 +114,15 @@ public class StartGameThree extends AppCompatActivity {
     private void randomSelectWord() {
         tv.setText(r[(int) (Math.random() * r.length)]);
     }
-
     //кнопка выхода на главный экран
     public void back(View view) {
         Intent a = new Intent(StartGameThree.this , MainActivity.class);
         startActivity(a);
         finish();
     }
-
     //старт игры
-    public void game(View view) {
-        color1.setEnabled(true);
-        color2.setEnabled(true);
-        color3.setEnabled(true);
-        color4.setEnabled(true);
-        color5.setEnabled(true);
-        color6.setEnabled(true);
+    public void game(View view){
+        setEnable(false);
 
         game.setEnabled(false);
 
@@ -151,7 +146,6 @@ public class StartGameThree extends AppCompatActivity {
 
           //создание таймера
         new CountDownTimer(20000 , 1000) {
-
             @Override
             public void onTick(long millisUntilFinished) {
                 tv3.setText("таймер : " + millisUntilFinished / 1000);
@@ -159,13 +153,7 @@ public class StartGameThree extends AppCompatActivity {
             //конец таймера
             @Override
             public void onFinish() {
-                color1.setEnabled(false);
-                color2.setEnabled(false);
-                color3.setEnabled(false);
-                color4.setEnabled(false);
-                color5.setEnabled(false);
-                color6.setEnabled(false);
-
+                setEnable(false);
 
                 tv.setText("нажми \n start");
                 game.setEnabled(true);

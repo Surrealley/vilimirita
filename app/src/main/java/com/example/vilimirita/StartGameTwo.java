@@ -1,6 +1,5 @@
 package com.example.vilimirita;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -73,20 +72,22 @@ public class StartGameTwo extends AppCompatActivity {
         key9.setOnClickListener(oс);
 
         // начальная фаза бъектов
-        key1.setEnabled(false);
-        key2.setEnabled(false);
-        key3.setEnabled(false);
-        key4.setEnabled(false);
-        key5.setEnabled(false);
-        key6.setEnabled(false);
-        key7.setEnabled(false);
-        key8.setEnabled(false);
-        key9.setEnabled(false);
+        setEnable(false);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
-
+    public void setEnable(boolean i){
+        key1.setEnabled(i);
+        key2.setEnabled(i);
+        key3.setEnabled(i);
+        key4.setEnabled(i);
+        key5.setEnabled(i);
+        key6.setEnabled(i);
+        key7.setEnabled(i);
+        key8.setEnabled(i);
+        key9.setEnabled(i);
+    }
     //метод рандома
     public int random() {
         String[] r = {"1","2","3","4","5","6","7","8","9"};
@@ -148,15 +149,7 @@ public class StartGameTwo extends AppCompatActivity {
 
     //старт  игры
     public void start(View view) {
-        key1.setEnabled(true);
-        key2.setEnabled(true);
-        key3.setEnabled(true);
-        key4.setEnabled(true);
-        key5.setEnabled(true);
-        key6.setEnabled(true);
-        key7.setEnabled(true);
-        key8.setEnabled(true);
-        key9.setEnabled(true);
+        setEnable(true);
 
         tvCounter.setText("счет: " + count);
 
@@ -170,18 +163,11 @@ public class StartGameTwo extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 tvTimer.setText("таймер: " + millisUntilFinished / 1000);
             }
+
             //конец таймера
             @Override
             public void onFinish() {
-                key1.setEnabled(false);
-                key2.setEnabled(false);
-                key3.setEnabled(false);
-                key4.setEnabled(false);
-                key5.setEnabled(false);
-                key6.setEnabled(false);
-                key7.setEnabled(false);
-                key8.setEnabled(false);
-                key9.setEnabled(false);
+                setEnable(false);
 
                 count = 0;
 
