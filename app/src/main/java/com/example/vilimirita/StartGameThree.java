@@ -15,9 +15,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 public class StartGameThree extends AppCompatActivity {
 
@@ -41,7 +38,7 @@ public class StartGameThree extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.game_three);
 
         tv = findViewById(R.id.textView2);
         tv2 = findViewById(R.id.textView3);

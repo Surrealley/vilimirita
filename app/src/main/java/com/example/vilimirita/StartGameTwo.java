@@ -41,7 +41,7 @@ public class StartGameTwo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.game_two);
 
         btn3 = findViewById(R.id.w0);
         start = findViewById(R.id.start);
@@ -88,6 +88,7 @@ public class StartGameTwo extends AppCompatActivity {
         key8.setEnabled(i);
         key9.setEnabled(i);
     }
+
     //метод рандома
     public int random() {
         String[] r = {"1","2","3","4","5","6","7","8","9"};
@@ -108,8 +109,7 @@ public class StartGameTwo extends AppCompatActivity {
     }
 
     //правильный ответ
-    private void correctAnswer()
-    {
+    private void correctAnswer() {
         count++;
         tvResult.setText("ПРАВИЛЬНО");
         tvResult.setTextColor(getResources().getColor(R.color.green));
@@ -119,8 +119,7 @@ public class StartGameTwo extends AppCompatActivity {
     }
 
     //неправильный ответ
-    private void wrongAnswer()
-    {
+    private void wrongAnswer() {
         tvResult.setText("НЕПРАВИЛЬНО");
         tvResult.setTextColor(getResources().getColor(R.color.red));
         count--;

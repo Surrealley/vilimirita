@@ -20,6 +20,8 @@
         <activity android:name=".StartGameTwo"/>
 
         <activity android:name=".StartGameThree"/>
+
+        <activity android:name=".StartGameFour"/>
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.075" />
 
     <Button
-        android:id="@+id/w1"
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Реакция"
@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.402" />
 
     <Button
-        android:id="@+id/w2"
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Реакция 2"
@@ -45,5 +45,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Реакция 3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
