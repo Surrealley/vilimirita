@@ -24,7 +24,7 @@ public class StartGameFour extends AppCompatActivity {
         setContentView(R.layout.game_four);
 
         tvInsert = findViewById(R.id.bot);
-        answer = findViewById(R.id.textView2);
+        answer = findViewById(R.id.TextView2);
 
         rock = findViewById(R.id.rock);
         paper = findViewById(R.id.paper);
@@ -42,22 +42,29 @@ public class StartGameFour extends AppCompatActivity {
     }
 
     public void timer(Button button, TextView monitor, TextView answer, int btnAnswer,int tvAnswer ){
-        new CountDownTimer(3000,1000){
+        new CountDownTimer(1000,1000){
 
             @Override
             public void onTick(long millisUntilFinished) {
+              //  answer.setText("таймер: " + millisUntilFinished / 1000);
+                paper.setEnabled(false);
+                scissors.setEnabled(false);
+                rock.setEnabled(false);
             }
             @Override
             public void onFinish() {
-                if(button.equals(monitor)){
+                if(button.getText().equals(monitor.getText())){
                     answer.setText("ничья");
                 }
-                else if(button.equals(random[btnAnswer]) && monitor.equals(random[tvAnswer]) ){
+                else if(button.getText().equals(random[btnAnswer]) && monitor.getText().equals(random[tvAnswer]) ){
                     answer.setText("победа");
                 }
                 else{
                     answer.setText("проиграл");
                 }
+                paper.setEnabled(true);
+                scissors.setEnabled(true);
+                rock.setEnabled(true);
             }
         }.start();
     }

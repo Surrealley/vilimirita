@@ -119,7 +119,7 @@ public class StartGameThree extends AppCompatActivity {
     }
     //старт игры
     public void game(View view){
-        setEnable(false);
+        setEnable(true);
 
         game.setEnabled(false);
 
