@@ -26,6 +26,7 @@
         android:layout_height="138dp"
         android:background="@drawable/konter3"
         android:gravity="center"
+        android:fontFamily="@font/font"
         android:textColor="@color/white"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
