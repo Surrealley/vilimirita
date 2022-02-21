@@ -1,6 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+<<<<<<< HEAD
     <style name="Theme.Vilimirita" parent="Theme.Design.NoActionBar">
+=======
+    <style name="Theme.Vilimirita" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,7 +16,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+<<<<<<< HEAD
         <item name="android:fontFamily">@font/font</item>
         <item name="android:textSize">25sp</item>
+=======
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
     </style>
 </resources>

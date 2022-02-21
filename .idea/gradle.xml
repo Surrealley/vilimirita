@@ -4,10 +4,17 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+<<<<<<< HEAD
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="Embedded JDK" />
+=======
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.8" />
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,6 +22,10 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+<<<<<<< HEAD
+=======
+        <option name="useQualifiedModuleNames" value="true" />
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
       </GradleProjectSettings>
     </option>
   </component>

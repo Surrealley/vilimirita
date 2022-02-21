@@ -2,6 +2,10 @@ package com.example.vilimirita;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+<<<<<<< HEAD
+=======
+import android.annotation.SuppressLint;
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,17 +36,29 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
           switch (v.getId()) {
               case R.id.btn1:
+<<<<<<< HEAD
                   Intent a = new Intent(MainActivity.this , StartGame1.class);
+=======
+                  Intent a = new Intent(MainActivity.this , StartGameTwo.class);
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
                   startActivity(a);
                   finish();
                   break;
               case R.id.btn2:
+<<<<<<< HEAD
                   Intent b = new Intent(MainActivity.this , StartGame2.class);
+=======
+                  Intent b = new Intent(MainActivity.this , StartGameThree.class);
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
                   startActivity(b);
                   finish();
                   break;
               case R.id.btn3:
+<<<<<<< HEAD
                   Intent c = new Intent(MainActivity.this , StartGame3.class);
+=======
+                  Intent c = new Intent(MainActivity.this , StartGameFour.class);
+>>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
                   startActivity(c);
                   finish();
                   break;
