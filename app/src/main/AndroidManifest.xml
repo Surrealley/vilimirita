@@ -6,39 +6,23 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-<<<<<<< HEAD
         android:screenOrientation="portrait"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vilimirita">
         <activity android:name=".MainActivity"
             android:exported="true">
-=======
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Vilimirita">
-        <activity android:name=".MainActivity">
->>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-<<<<<<< HEAD
         <activity android:name=".StartGame1"/>
 
         <activity android:name=".StartGame2"/>
 
         <activity android:name=".StartGame3"/>
-=======
-        <activity android:name=".StartGameTwo"/>
-
-        <activity android:name=".StartGameThree"/>
-
-        <activity android:name=".StartGameFour"/>
->>>>>>> cc8d0cca4747153447db5ca1259d622e8710d619
     </application>
 
 </manifest>
